@@ -23,6 +23,12 @@ install.packages("usethis")
 **roxygen2** is an R package that simplifies the process of documenting R functions, datasets, and packages. 
 It allows you to write documentation directly within the source code using special comments (roxygen comments), which are then processed to generate standard R documentation (.Rd files) automatically.
 
+For example, if you want to document a data file:
+```
+use_r("some_data")
+roxygenize()
+```
+
 ### Add @importFrom
 To include required functions from a package, use `#' @importFrom` in the `.R` file and run `roxygen2::roxygenize()` to update the `NAMESPACE` automatically and generate all function documentation.
 
@@ -104,6 +110,40 @@ devtools::build_vignettes()
 browseVignettes("sherrysPackage")
 ```
 
+### Unit tests
+Unit testing involves testing individual functions or units of code to ensure they behave as expected. It’s crucial in R package development to maintain code quality, identify bugs early, and ensure that updates don’t introduce regressions.
+
+In this example, I have included a basic random unit test for illustrative purposes.
+
+```
+# Create testing framework
+library(usethis)
+use_testthat()
+
+# Create test template files
+use_test(name = "temp-visualize")
+
+# Run all of the tests
+library(testthat)
+test_file("tests/testthat/test-temp-visualize.R")
+
+# Can instead run test_package() to run them all!
+test_package("sherrysPackage")
+```
+
+### Versioning:
+The version is specified in ```DESCRIPTION``` using Semantic Versioning ```(MAJOR.MINOR.PATCH.DEV)```:
+Version: 1.0.0
+
+- **MAJOR**: Breaking changes.
+- **MINOR**: New features but backward-compatible.
+- **PATCH**: Bug fixes.
+- **DEV**: Rarely changed, remove for release!
+
+To increment version automatically:
+```usethis::use_version("minor")```  # Increments minor version
+
+
 ### R Studio
 For some actions, you don’t need to write code manually—you can simply click on buttons in RStudio's interface to accomplish the task.
 
@@ -139,13 +179,13 @@ The following is a sample output from the `visualize` function in the `sherrysPa
 y1 <- rnorm(1000)
 visualize(y1) # the function call!
 ```
-![](man/Rplot01.png){.center}
+![](man/Rplot01.png)
 
 ```
 y2 <- rexp(1000)
 visualize(y2) # just another function call!
 ```
-![](man/Rplot02.png){.center}
+![](man/Rplot02.png) 
 
 ### Reference
 - [Developing R Packages](https://app.datacamp.com/learn/courses/developing-r-packages)
