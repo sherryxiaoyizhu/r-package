@@ -2,7 +2,8 @@
 % Please edit documentation in R/visualize.R
 \name{visualize}
 \alias{visualize}
-\title{Visualization}
+\title{Add title
+Visualization Function}
 \usage{
 visualize(x)
 }
@@ -13,5 +14,6 @@ visualize(x)
 Some basic visualization (graphs).
 }
 \description{
+Add description
 Creates histogram, boxplot and numeric summary
 }

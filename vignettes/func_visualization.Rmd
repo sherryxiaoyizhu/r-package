@@ -1,0 +1,28 @@
+---
+title: "Function Visualization Examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Function Visualization Examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(sherrysPackage)
+```
+
+# Output some basic visualization for testing
+
+We can use the package to output some basic visualization for testing purposes.
+
+```{r visualize-example}
+y <- rexp(1000)
+visualize(y)
+```

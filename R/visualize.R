@@ -1,5 +1,7 @@
-#' Visualization
+#' Add title
+#' Visualization Function
 #'
+#' Add description
 #' Creates histogram, boxplot and numeric summary
 #'
 #' @param x A numeric variable.
