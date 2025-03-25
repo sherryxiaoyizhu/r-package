@@ -25,7 +25,7 @@ It allows you to write documentation directly within the source code using speci
 
 For example, if you want to document a data file:
 ```
-use_r("some_data")
+use_data("some_data")
 roxygenize()
 ```
 
